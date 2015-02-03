@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1><strong>File:</strong>
+  <%= @timesheet.file_file_name %></h1>
+</p>
+
+<h2>Listing Sub-Timesheets</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>SubSheet Name</th>
+      <th>Uploaded At</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timesheet.subsheets.each do |subsheet| %>
+      <tr>
+        <td><%= subsheet.subsheet_path.split("/").last %></td>
+        <td><%= @timesheet.created_at.to_time %></td>
+        <td><%= link_to "Download", download_subsheet_timesheet_path(subsheet.id), class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Back', timesheets_path,  class: "btn btn-info" %>
+<%= link_to 'Download All', download_all_subsheet_timesheet_path(@timesheet.id),  class: "btn btn-primary" %>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timesheets</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+  <body id="page-top" class="index">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to 'Home', timesheets_path, class: "navbar-brand" %>
+        </div>
+        <p class="navbar-text navbar-right navbar-header">Timesheets Parser</p>
+      </div>
+    </nav>
+    <div class="container">
+        <div class="intro-text">
+          <%= yield %>
+        </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Developed by Tarun Garg</p>
+      </div>
+    </footer>
+  </body>
+</html>

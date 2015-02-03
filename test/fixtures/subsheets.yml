@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subsheet_path: MyString
+  timesheet_id: 1
+
+two:
+  subsheet_path: MyString
+  timesheet_id: 1

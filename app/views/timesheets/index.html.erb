@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Timesheets</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Uploaded At</th>
+      <th>File Size</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timesheets.each do |timesheet| %>
+      <tr>
+        <td><%= timesheet.file_file_name %></td>
+        <td><%= timesheet.created_at.to_time %></td>
+        <td><%= timesheet.file_file_size %></td>
+        <td><%= link_to 'Show', timesheet, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', timesheet, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Timesheet', new_timesheet_path, class: "btn btn-info" %>
